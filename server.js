@@ -4,9 +4,8 @@ const cors = require("cors");
  
 dotenv.config();
 
-const corsOptions = {
-    //origin: 'https://easypassword-gen.vercel.app', 
-    origin: 'http://localhost:5173', 
+const corsOptions = {    
+    origin: 'https://palindrome-checker-flax.vercel.app', 
     credentials: true,
   };
   
