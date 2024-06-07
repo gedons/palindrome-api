@@ -10,10 +10,11 @@ function getRandomPalindromes(count) {
 exports.checkWord = async (req, res) => {
     try {
       const { word } = req.body;
+      const lowerCaseWord = word.toLowerCase();
       const reversedWord = word.split('').reverse().join('');
       const isPalindrome = word === reversedWord;
       const randomPalindromes = getRandomPalindromes(5);
-      res.json({ word, reversedWord, isPalindrome, randomPalindromes });
+      res.json({ word: lowerCaseWord, reversedWord, isPalindrome, randomPalindromes });
     } catch (error) {
       res.status(500).json({ error: 'Internal server error' });
     }
